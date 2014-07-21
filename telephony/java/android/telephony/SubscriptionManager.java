@@ -1113,7 +1113,7 @@ public class SubscriptionManager {
      * {@See TelephonyManager#SIM_STATE_ABSENT}
      * {@See TelephonyManager#SIM_STATE_PIN_REQUIRED}
      * {@See TelephonyManager#SIM_STATE_PUK_REQUIRED}
-     * {@See TelephonyManager#SIM_STATE_NETWORK_LOCKED}
+     * {@See TelephonyManager#SIM_STATE_PERSO_LOCKED}
      * {@See TelephonyManager#SIM_STATE_READY}
      * {@See TelephonyManager#SIM_STATE_NOT_READY}
      * {@See TelephonyManager#SIM_STATE_PERM_DISABLED}

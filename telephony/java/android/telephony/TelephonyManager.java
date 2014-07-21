@@ -1471,7 +1471,7 @@ public class TelephonyManager {
     /** SIM card state: Locked: requires the user's SIM PUK to unlock */
     public static final int SIM_STATE_PUK_REQUIRED = 3;
     /** SIM card state: Locked: requires a network PIN to unlock */
-    public static final int SIM_STATE_NETWORK_LOCKED = 4;
+    public static final int SIM_STATE_PERSO_LOCKED = 4;
     /** SIM card state: Ready */
     public static final int SIM_STATE_READY = 5;
     /** SIM card state: SIM Card is NOT READY
@@ -1521,7 +1521,7 @@ public class TelephonyManager {
      * @see #SIM_STATE_ABSENT
      * @see #SIM_STATE_PIN_REQUIRED
      * @see #SIM_STATE_PUK_REQUIRED
-     * @see #SIM_STATE_NETWORK_LOCKED
+     * @see #SIM_STATE_PERSO_LOCKED
      * @see #SIM_STATE_READY
      * @see #SIM_STATE_NOT_READY
      * @see #SIM_STATE_PERM_DISABLED
@@ -1540,7 +1540,7 @@ public class TelephonyManager {
      * @see #SIM_STATE_ABSENT
      * @see #SIM_STATE_PIN_REQUIRED
      * @see #SIM_STATE_PUK_REQUIRED
-     * @see #SIM_STATE_NETWORK_LOCKED
+     * @see #SIM_STATE_PERSO_LOCKED
      * @see #SIM_STATE_READY
      * @see #SIM_STATE_NOT_READY
      * @see #SIM_STATE_PERM_DISABLED
