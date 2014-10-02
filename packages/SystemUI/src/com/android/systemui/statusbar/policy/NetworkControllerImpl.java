@@ -21,6 +21,7 @@ import static android.net.NetworkCapabilities.TRANSPORT_BLUETOOTH;
 import static android.net.NetworkCapabilities.TRANSPORT_CELLULAR;
 import static android.net.NetworkCapabilities.TRANSPORT_ETHERNET;
 import static android.net.NetworkCapabilities.TRANSPORT_WIFI;
+import android.app.AppOpsManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -140,6 +141,8 @@ public class NetworkControllerImpl extends BroadcastReceiver
     // The current user ID.
     private int mCurrentUserId;
 
+    protected static boolean mAppopsStrictEnabled = false;
+
     /**
      * Construct this controller object and register for updates.
      */
@@ -160,6 +163,8 @@ public class NetworkControllerImpl extends BroadcastReceiver
             MobileDataControllerImpl mobileDataController) {
         mContext = context;
         mConfig = config;
+
+        mAppopsStrictEnabled = AppOpsManager.isStrictEnable();
 
         mSubscriptionManager = subManager;
         mConnectivityManager = connectivityManager;
@@ -864,7 +869,7 @@ public class NetworkControllerImpl extends BroadcastReceiver
         public void notifyListeners() {
             // only show wifi in the cluster if connected or if wifi-only
             boolean wifiVisible = mCurrentState.enabled
-                    && (mCurrentState.connected || !mHasMobileData);
+                    && (mCurrentState.connected || !mHasMobileData || mAppopsStrictEnabled);
             String wifiDesc = wifiVisible ? mCurrentState.ssid : null;
             boolean ssidPresent = wifiVisible && mCurrentState.ssid != null;
             String contentDescription = getStringIfExists(getContentDescription());
