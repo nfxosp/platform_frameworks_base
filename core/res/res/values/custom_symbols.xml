@@ -38,5 +38,12 @@
   <java-symbol type="string" name="permission" />
   <java-symbol type="layout" name="permission_confirmation_dialog" />
   <java-symbol type="array" name="app_ops_labels" />
+  
+  <!-- Privacy Guard -->
+  <java-symbol type="drawable" name="stat_notify_privacy_guard" />
+  <java-symbol type="string" name="privacy_guard_notification" />
+  <java-symbol type="string" name="privacy_guard_notification_detail" />
+  <java-symbol type="string" name="privacy_guard_dialog_title" />
+  <java-symbol type="string" name="privacy_guard_dialog_summary" />
 
 </resources>
