@@ -95,4 +95,7 @@
     <string name="app_ops_write_mms">write an MMS message</string>
     <string name="app_ops_write_sms">write an SMS message</string>
     
+    <!-- Content description of the superuser tile -->
+    <string name="accessibility_su_active">Superuser session active</string>
+    
 </resources>
