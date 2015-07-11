@@ -207,4 +207,7 @@
     <!-- Default for Settings.Global.GUEST_USER_ENABLED -->
     <bool name="def_guest_user_enabled">true</bool>
 
+    <!-- Default value of Settings.System.NOISE_SUPPRESSION -->
+    <bool name="def_noise_suppression">false</bool>
+    
 </resources>
