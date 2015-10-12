@@ -293,7 +293,7 @@ public final class ShutdownThread extends Thread {
             
             pd.setMessage(context.getText(com.android.internal.R.string.shutdown_progress));
             pd.setIndeterminate(true);
-
+        }
         pd.setCancelable(false);
         pd.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);
 

@@ -167,6 +167,7 @@ public class RecentsView extends FrameLayout implements TaskStackView.TaskStackV
                 stackView.dismissAllTasks();
             }
         }
+    }
         
     /** Gets the list of task views */
     List<TaskStackView> getTaskStackViews() {
