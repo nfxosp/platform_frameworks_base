@@ -280,7 +280,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
                     }
                 }
                 if (operation.isDeleteOperation()) {
-                    if (enforceDeletePermission(callingPkg, uri, null)
+                    if (enforceDeletePermission(callingPkg, uri)
                             != AppOpsManager.MODE_ALLOWED) {
                         throw new OperationApplicationException("App op not allowed", 0);
                     }
@@ -312,7 +312,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         public int delete(String callingPkg, Uri uri, String selection, String[] selectionArgs) {
             validateIncomingUri(uri);
             uri = getUriWithoutUserId(uri);
-            if (enforceDeletePermission(callingPkg, uri, null) != AppOpsManager.MODE_ALLOWED) {
+            if (enforceDeletePermission(callingPkg, uri) != AppOpsManager.MODE_ALLOWED) {
                 return 0;
             }
             final String original = setCallingPackage(callingPkg);
@@ -474,7 +474,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         }
 
         private int enforceDeletePermission(String callingPkg, Uri uri) throws SecurityException {
-            enforceWritePermissionInner(uri);
+            enforceWritePermissionInner(uri, null);
             if (mWriteOp != AppOpsManager.OP_NONE) {
                 int op = mWriteOp;
                 switch (mWriteOp) {
