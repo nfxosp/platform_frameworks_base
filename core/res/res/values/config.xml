@@ -2046,6 +2046,5 @@
     <integer name="valueOff">0</integer>
     <!-- On setting -->
     <integer name="valueOn">1</integer>
-    
-    </string-array>
+
 </resources>
