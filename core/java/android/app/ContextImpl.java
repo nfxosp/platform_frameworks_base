@@ -1950,12 +1950,9 @@ class ContextImpl extends Context {
      * unable to create, they are filtered by replacing with {@code null}.
      */
     private File[] ensureDirsExistOrFilter(File[] dirs) {
-        ArrayList<File> result = new ArrayList<File>(dirs.length);
+        File[] result = new File[dirs.length];
         for (int i = 0; i < dirs.length; i++) {
             File dir = dirs[i];
-            if (Environment.MEDIA_REMOVED.equals(Environment.getStorageState(dir))) {
-                continue;
-            }
             if (!dir.exists()) {
                 if (!dir.mkdirs()) {
                     // recheck existence in case of cross-process race
@@ -1977,9 +1974,9 @@ class ContextImpl extends Context {
                     }
                 }
             }
-            result.add(dir);
+            result[i] = dir;
         }
-        return result.toArray(new File[result.size()]);
+        return result;
     }
 
     // ----------------------------------------------------------------------
